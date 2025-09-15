@@ -10,8 +10,6 @@
 
 </head>
 
-<>
+<class class="h-full">
 
-    <class class="h-full">
-
-        <div class="min-h-full">
+    <div class="min-h-full">
