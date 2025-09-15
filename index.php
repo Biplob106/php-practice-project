@@ -1,6 +1,7 @@
 <?php 
 
-$heading= 'dashboard';
-require ('view/index.view.php');
+require('function.php');
+
+require('route.php' );
 
 ?>

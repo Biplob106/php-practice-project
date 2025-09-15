@@ -1,17 +1,3 @@
-<?php  
-   
-     function isActive($link)
-    {
-
-         $_SERVER['REQUEST_URI'];
-
-         $url= $_SERVER['REQUEST_URI'];
-         $a = ($url===$link?'bg-gray-900':'');
-          echo $a;
-    }
-
-?>
-
 <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
@@ -23,16 +9,16 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-                        <a href="index.php" aria-current="page" class="rounded-md  <?php isActive('/index.php')?>
- px-3 py-2 text-sm font-medium text-white">Dashboard</a>
-                        <a href="team.php"
-                            class="rounded-md <?php isActive('/team.php')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
-                        <a href="projects.php"
-                            class="rounded-md <?php isActive('/projects.php')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
-                        <a href="calendar.php"
-                            class="rounded-md  <?php isActive('/calendar.php')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
-                        <a href="report.php"
-                            class="rounded-md <?php isActive('/report.php')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Reports</a>
+                        <a href="/"
+                            class="rounded-md  <?php isActive('/')?> px-3 py-2 text-sm font-medium text-white">Dashboard</a>
+                        <a href="team"
+                            class="rounded-md <?php isActive('/team')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Team</a>
+                        <a href="projects"
+                            class="rounded-md <?php isActive('/projects')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Projects</a>
+                        <a href="calendar"
+                            class="rounded-md  <?php isActive('/calendar')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
+                        <a href="report"
+                            class="rounded-md <?php isActive('/report')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Reports</a>
                     </div>
                 </div>
             </div>
