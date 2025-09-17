@@ -1,7 +1,10 @@
 <?php
- class Database
+
+class Database
 { 
     public $connection;
+
+    public $statement;
     
  
     
@@ -22,11 +25,37 @@
         
 
 
-    $statemet= $this->connection->prepare($query);
-    $statemet->execute($params);
+    $this->statement= $this->connection->prepare($query);
+    
+    $this->statement->execute($params);
      
     
-    return $statemet;
+    return $this;
    }
-    
+
+
+   public function find()
+   {
+       return $this->statement->fetch();
+   }
+
+
+   public function findOrFail()
+   {
+       $result= $this->find();
+       
+       if(!$result)
+       {
+             abort(404);
+           
+       }
+       return $result;
+   }    
+
+    public function fetchAll()
+    {
+        return $this->statement->fetchAll();
+    }
+
+   
 }
