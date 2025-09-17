@@ -37,7 +37,10 @@ $route=[
     '/team' => 'controller/team.php',
     '/projects' => 'controller/projects.php',
     '/calendar' => 'controller/calendar.php',
-    '/report' => 'controller/report.php'
+    '/report' => 'controller/report.php',
+     '/notes' => 'controller/notes.php',
+     '/note' => 'controller/note.php'
+
 ];
 
 if(array_key_exists($uri, $route))

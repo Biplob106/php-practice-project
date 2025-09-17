@@ -4,19 +4,11 @@ require('function.php');
 
 require('route.php' );
 
-require('database.php');
+//require 'Database.php';
 
 $config= require('config.php');
 
-$db= new database($config);
-$posts= $db->query("where * from posts " )->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-
-foreach($posts as $post){
-    echo $post['title']."<br>";
-}
+//$db= new Database($config['database']);
 
 
 ?>

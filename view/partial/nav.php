@@ -19,6 +19,8 @@
                             class="rounded-md  <?php isActive('/calendar')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Calendar</a>
                         <a href="report"
                             class="rounded-md <?php isActive('/report')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Reports</a>
+                        <a href="notes"
+                            class="rounded-md <?php isActive('/notes')?> px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Notes</a>
                     </div>
                 </div>
             </div>
