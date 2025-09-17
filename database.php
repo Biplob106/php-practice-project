@@ -1,4 +1,5 @@
-<?php class database
+<?php
+ class Database
 { 
     public $connection;
     
@@ -10,22 +11,22 @@
            
             //$dsn="mysql:host={$config['host']};port={$config['port']};dbname={$config['dbname']};charset={$config['charset']}";
 
-            $this->connection=new PDO($dsn , $username, $password,[
+            $this->connection = new PDO($dsn , $username, $password,[
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
         
     }
     
-   public function  query()
+   public function  query($query , $params=[])
    {
         
 
 
-    $statemet= $this->connection->prepare("SELECT * FROM posts");
-    $statemet->execute();
-    $posts= $statemet;
+    $statemet= $this->connection->prepare($query);
+    $statemet->execute($params);
+     
     
-    return $posts;
+    return $statemet;
    }
     
 }
