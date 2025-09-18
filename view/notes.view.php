@@ -1,8 +1,10 @@
 <?php
         require ('partial/head.php');
-        require ('partial/nav.php')?>
+        require ('partial/nav.php');
+    
 
-<?php require ('partial/banner.php')?>
+require ('partial/banner.php');
+?>
 
 <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -13,6 +15,11 @@
             </a>
         </li>
         <?php endforeach ?>
+
+
+        <p>
+            <a href="notes/create" class="text-blue-500 hover:underline">create note
+        </p>
     </div>
 </main>
 <?php require ('partial/footer.php')?>

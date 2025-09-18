@@ -9,6 +9,8 @@ return [
     '/report' => 'controller/report.php',
      '/notes' => 'controller/notes.php',
      '/note' => 'controller/note.php',
-     '/note/create' => 'controller/note-create.php'
+     '/notes/create' => 'controller/note-create.php'
+     
+
 
 ];
