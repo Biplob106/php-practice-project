@@ -1,8 +1,7 @@
-<?php
-        require ('partial/head.php');
-        require ('partial/nav.php');
-
-require ('partial/banner.php');
+<?php   
+        require ('view/partial/head.php');
+        require ('view/partial/nav.php');
+        require ('view/partial/banner.php');
 ?>
 <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -38,4 +37,4 @@ require ('partial/banner.php');
 
     </div>
 </main>
-<?php require ('partial/footer.php')?>
+<?php require ('view/partial/footer.php')?>

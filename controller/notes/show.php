@@ -20,4 +20,4 @@ authorize($note['user_id'] === $currentUserId);
 
 
 
-require ('view/note.view.php');
+require ('view/notes/show.view.php');

@@ -7,4 +7,4 @@ $config= require('config.php');
 $db = new Database($config['database']);
 //var_dump($db);
 $notes = $db->query("SELECT * FROM notes")->fetchAll();
-require 'view/notes.view.php';
+require 'view/notes/index.view.php';

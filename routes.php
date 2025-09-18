@@ -7,9 +7,9 @@ return [
     '/projects' => 'controller/projects.php',
     '/calendar' => 'controller/calendar.php',
     '/report' => 'controller/report.php',
-     '/notes' => 'controller/notes.php',
-     '/note' => 'controller/note.php',
-     '/notes/create' => 'controller/note-create.php'
+     '/notes' => 'controller/notes/index.php',
+     '/note' => 'controller/notes/show.php',
+     '/notes/create' => 'controller/notes/create.php'
      
 
 

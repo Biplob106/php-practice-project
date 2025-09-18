@@ -1,9 +1,7 @@
-<?php
-        require ('partial/head.php');
-        require ('partial/nav.php');
-    
-
-require ('partial/banner.php');
+<?php   
+        require ('view/partial/head.php');
+        require ('view/partial/nav.php');
+        require ('view/partial/banner.php');
 ?>
 
 <main>
@@ -22,4 +20,4 @@ require ('partial/banner.php');
         </p>
     </div>
 </main>
-<?php require ('partial/footer.php')?>
+<?php require ('view/partial/footer.php')?>
