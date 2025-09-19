@@ -1,9 +1,9 @@
 <?php 
 
 $heading= 'note Create';
-$config= require('config.php');
-require_once 'Database.php';
-require 'Validation.php';
+$config= require base_path('config.php');
+require_once base_path('Database.php');
+require base_path('Validation.php');
 $db= new Database($config['database']);
 
 
@@ -37,6 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-require ('view/notes/create.view.php');
+require base_path('view/notes/create.view.php');
 
 ?>

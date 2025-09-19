@@ -1,6 +1,6 @@
 <?php 
 
 $heading= 'Projects';
-require ('view/projects.view.php');
+require base_path('view/projects.view.php');
 
 ?>

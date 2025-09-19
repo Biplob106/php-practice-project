@@ -1,8 +1,8 @@
 <?php 
 
 $heading= 'note';
-require_once 'Database.php' ;
-$config= require('config.php');
+require_once base_path('Database.php') ;
+$config= require base_path('config.php');
 
 
 $db= new Database($config['database']);
@@ -20,4 +20,4 @@ authorize($note['user_id'] === $currentUserId);
 
 
 
-require ('view/notes/show.view.php');
+require base_path('view/notes/show.view.php');

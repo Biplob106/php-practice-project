@@ -1,6 +1,6 @@
 <?php 
 
 $heading= 'Reports';
-require ('view/report.view.php');
+require base_path('view/report.view.php');
 
 ?>

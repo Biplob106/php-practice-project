@@ -1,7 +1,7 @@
 <?php   
-        require ('view/partial/head.php');
-        require ('view/partial/nav.php');
-        require ('view/partial/banner.php');
+        require base_path('view/partial/head.php');
+        require base_path('view/partial/nav.php');
+        require base_path('view/partial/banner.php');
 ?>
 
 <main>
@@ -20,4 +20,4 @@
         </p>
     </div>
 </main>
-<?php require ('view/partial/footer.php')?>
+<?php require base_path('view/partial/footer.php')?>

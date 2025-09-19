@@ -4,6 +4,6 @@
 
 $heading= 'team';
 
-require ('view/team.view.php');
+require base_path('view/team.view.php');
 
 ?>
