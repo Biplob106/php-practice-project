@@ -1,6 +1,8 @@
 <?php 
 
-require base_path('Database.php');    
+use Core\Database;
+
+require base_path('Core/Database.php');    
 $config= require base_path('config.php');
 
 $db = new Database($config['database']);

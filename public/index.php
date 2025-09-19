@@ -1,11 +1,19 @@
 <?php 
 
 
-require('../function.php');
+require('../Core/function.php');
 
-require base_path('route.php' );
-require base_path('Response.php');
-require base_path('Database.php');
+
+spl_autoload_register(function($class) 
+{
+    
+    require base_path("{$class}.php");
+
+});  
+
+
+require base_path('Core/route.php' );
+
 
 
 

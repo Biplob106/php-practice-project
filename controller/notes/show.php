@@ -1,6 +1,8 @@
 <?php 
 
-require_once base_path('Database.php') ;
+
+use Core\Database;  
+require_once base_path('Core/Database.php') ;
 $config= require base_path('config.php');
 
 

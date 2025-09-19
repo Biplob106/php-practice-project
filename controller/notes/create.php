@@ -1,14 +1,15 @@
 <?php
+
+use Core\Database;
+use Core\Validation;
 $config= require base_path('config.php');
-require_once base_path('Database.php');
-require base_path('Validation.php');
 $db= new Database($config['database']);
 
-
+$error= [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      
-    $error= [];
+    
     
 
     if(!Validation::string($_POST['body'],1,100)){
@@ -31,6 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 view('notes/create.view.php',[
     'heading' => 'create note',
+    'error' => $error
     
  ]);
 

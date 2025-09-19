@@ -16,7 +16,7 @@ die();
 }
 
 
-define('BASE_PATH', __DIR__); // Root path of your project
+define('BASE_PATH', __DIR__ . '/..'); // Root path of your project
 
 function base_path($path)
 {

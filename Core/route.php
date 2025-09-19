@@ -1,10 +1,23 @@
 <?php
 
-$route= require('routes.php');
 
 
-$uri= parse_url($_SERVER['REQUEST_URI'])['path'];
 
+
+
+
+function routeToController($uri, $routes)
+{
+    if(array_key_exists($uri, $routes))
+    {
+        require base_path($routes[$uri]);
+    }
+    else {
+        http_response_code(404);
+        
+        echo 'Sorry ,not found';
+    }
+}
 
 /*
 $uri= $_SERVER['REQUEST_URI'];
@@ -34,17 +47,12 @@ elseif($uri === '/report')
 
 */
 
+$route= require(base_path('routes.php'));
 
 
-if(array_key_exists($uri, $route))
-{
-    require ($route[$uri]);
-} 
-else {
-    http_response_code(404);
-    
-    echo 'Sorry ,not found';
-}
+$uri= parse_url($_SERVER['REQUEST_URI'])['path'];
+
+routeToController($uri, $route);
 
 
 ?>
