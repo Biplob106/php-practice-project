@@ -1,6 +1,4 @@
-<?php 
-
-$heading= 'note Create';
+<?php
 $config= require base_path('config.php');
 require_once base_path('Database.php');
 require base_path('Validation.php');
@@ -28,15 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
         
     }
-
-    
-        
-
      
 }
 
-
-
-require base_path('view/notes/create.view.php');
+view('notes/create.view.php',[
+    'heading' => 'create note',
+    
+ ]);
 
 ?>

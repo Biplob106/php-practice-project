@@ -2,8 +2,11 @@
 
 
 
-$heading= 'team';
 
-require base_path('view/team.view.php');
+
+ view('team.view.php',[
+    'heading' => 'team'
+ ]
+);
 
 ?>

@@ -1,6 +1,8 @@
 <?php 
 
-$heading= 'Calendar';
-require base_path('view/calendar.view.php');
+ view('calendar.view.php',
+[
+    'heading' => 'Calendar'
+]);
 
 ?>

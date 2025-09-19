@@ -1,6 +1,10 @@
 <?php 
 
-$heading= 'dashboard';
-require base_path('view/index.view.php');
+
+
+ view('index.view.php',
+[
+    'heading' => 'Dashboard N'
+]);
 
 ?>
