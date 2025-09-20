@@ -1,58 +1,62 @@
 <?php
 
+namespace Core;
 
-
-
-
-
-
-function routeToController($uri, $routes)
+class Route
 {
-    if(array_key_exists($uri, $routes))
+    public $routes = [];
+
+
+    public function add($method,$uri, $controller)
     {
-        require base_path($routes[$uri]);
-    }
-    else {
-        http_response_code(404);
+        $this->routes[] = [
+            'uri' => $uri,
+            'controller' => $controller,
+            'method' => $method
+        ];
         
-        echo 'Sorry ,not found';
+    }
+
+    public function get($uri, $controller)
+    {
+        $this->add('GET', $uri, $controller);
+    }
+
+    public function post($uri, $controller)
+    {
+        $this->add('POST', $uri, $controller);
+    }
+
+    public function patch($uri, $controller)
+    {
+        $this->add('PATCH', $uri, $controller);
+    }
+
+    public function delete($uri, $controller)
+    {
+        $this->add('DELETE', $uri, $controller);
+    }
+
+    public function put($uri, $controller)
+    {
+        $this->add('PUT', $uri, $controller);
+    }
+
+    public function route($uri, $method)
+    {
+        foreach ($this->routes as $route) {
+            if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                return require base_path('controller/'.$route['controller']);
+            }
+        }
+
+        $this->abort();
+    }
+
+    protected function abort($code = 404)
+    {
+        http_response_code($code);
+        require base_path("view/{$code}.php");
+        die();
     }
 }
-
-/*
-$uri= $_SERVER['REQUEST_URI'];
-
-
-if($uri === '/')
-{
-    require ('controller/index.php');
-    
-}
-elseif($uri === '/team')
-{
-    require('controller/team.php');
-}
-elseif($uri === '/projects')
-{
-    require('controller/projects.php');
-}
-elseif($uri === '/calendar')
-{
-    require('controller/calendar.php');
-}
-elseif($uri === '/report')
-{
-    require('controller/report.php');
-}
-
-*/
-
-$route= require(base_path('routes.php'));
-
-
-$uri= parse_url($_SERVER['REQUEST_URI'])['path'];
-
-routeToController($uri, $route);
-
-
-?>
