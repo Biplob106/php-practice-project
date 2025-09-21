@@ -2,8 +2,10 @@
 
 use Core\Database;
 use Core\Validation;
-$config= require base_path('config.php');
-$db= new Database($config['database']);
+use Core\App;
+
+
+$db= App::resolve(Database::class);
 
 $error= [];
 
