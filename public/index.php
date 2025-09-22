@@ -3,7 +3,7 @@
 
 use Core\Route;
 use Core\App;
-
+session_start();
 require('../Core/function.php');
 
 spl_autoload_register(function($class) {

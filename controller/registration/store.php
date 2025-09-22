@@ -4,6 +4,7 @@ use Core\Validation;
 use Core\App;
 use Core\Database;
 
+ $db=App::resolve(Database::class);
  $email= $_POST['email'];
  $password= $_POST['password'];
 
@@ -28,7 +29,7 @@ $errors=[];
     ]);
  }
 
- $db=App::resolve(Database::class);
+
  
  
  //check if the account already exists
@@ -50,7 +51,7 @@ if($user){
 ]);
 
 $_SESSION['user']=[
-    'email'=>$eamil,
+    'email' => $eamil,
 ];
  header('Location','/');
  exit();
