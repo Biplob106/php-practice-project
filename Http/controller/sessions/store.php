@@ -15,11 +15,14 @@ if ($form->validate($email, $password)) {
 
     if ($auth->attempt($email, $password)) {
         redirect('/');
+        
     } 
         $form->error('email', 'No Matching Email Account Found for this email address');
     
 }
 
 Session::flash('errors',$form->errors());
+Session::flash('old',[ 'email' => $_POST['email']]);
+
 
 return redirect('/login');
