@@ -1,26 +1,25 @@
 <?php
 
 use Core\Authenticator;
+use Core\Session;
 use Http\Forms\LoginForm;
 
 $email    = $_POST['email'];
 $password = $_POST['password'];
 $errors   = [];
 
-$form = new LoginForm;
+$form = new LoginForm();
 if ($form->validate($email, $password)) {
 
     $auth = new Authenticator;
 
     if ($auth->attempt($email, $password)) {
         redirect('/');
-    } else {
+    } 
         $form->error('email', 'No Matching Email Account Found for this email address');
-    }
+    
 }
 
-return view('sessions/create.view.php',
-    [
-        'errors' => $form->errors(),
-    ]
-);
+Session::flash('errors',$form->errors());
+
+return redirect('/login');

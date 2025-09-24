@@ -3,6 +3,8 @@
 
 use Core\Route;
 use Core\App;
+use Core\Session;
+
 session_start();
 require('../Core/function.php');
 
@@ -24,3 +26,5 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 //dd($method);
 
 $router->route($uri, $method);
+
+Session::unflash();
