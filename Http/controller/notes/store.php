@@ -5,6 +5,13 @@ use Core\Validation;
 use Core\App;
 
 
+if (!isset($_SESSION['user_id'])) {
+    die("You must be logged in to create a note.");
+}
+$userId = $_SESSION['user_id'];
+
+
+dd($userId);
 $db= App::resolve(Database::class);
 
 $error= [];
@@ -29,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "INSERT INTO notes (body, user_id) VALUES (:body, :user_id)", 
             [
                 'body' => $_POST['body'],
-                'user_id' => 1
+                'user_id' => $_SESSION['user_id']
             ]
         );
 

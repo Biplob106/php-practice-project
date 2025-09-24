@@ -51,21 +51,8 @@ function abort($code = 404)
         abort(403);
     }
 }
+function redirect($path){
 
-
-function login($user)
-{
-
-    $_SESSION['user']=[
-    'email' => $user['email']
-];
-}
-
-function logout()
-{
-     $_SESSION=[];
-
- session_destroy();
- $param = session_get_cookie_params();
- setcookie('PHPSESSID', '',time()-3600,$param['path'],$param['domain'],$param['secure'],$param['httponly']);
+    header("location : {$path}");
+    exit();
 }
